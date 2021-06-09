@@ -1,0 +1,1 @@
+commit을 하지 않은 repository가 존재하여 branch 생성 불가
