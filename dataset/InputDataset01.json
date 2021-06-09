@@ -1,0 +1,60 @@
+{
+	"name": "InputDataset01",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Covid19_Vaccine_Centers"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "COVID19_Vaccine_Centers",
+				"container": "covid19container"
+			},
+			"columnDelimiter": ",",
+			"encodingName": "EUC-KR",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "연번",
+				"type": "String"
+			},
+			{
+				"name": "센터유형",
+				"type": "String"
+			},
+			{
+				"name": "센터명",
+				"type": "String"
+			},
+			{
+				"name": "운영기관",
+				"type": "String"
+			},
+			{
+				"name": "시설명",
+				"type": "String"
+			},
+			{
+				"name": "우편번호",
+				"type": "String"
+			},
+			{
+				"name": "주소",
+				"type": "String"
+			},
+			{
+				"name": "사무실전화번호",
+				"type": "String"
+			}
+		]
+	}
+}

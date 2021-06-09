@@ -1,0 +1,53 @@
+{
+	"name": "OutputDataset01",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Covid19_Vaccine_Centers"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "num",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "center_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "center_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "operating_organization",
+				"type": "nvarchar"
+			},
+			{
+				"name": "facility_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "postal_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "office_phone_number",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Covid19VaccineCenter"
+		}
+	}
+}
