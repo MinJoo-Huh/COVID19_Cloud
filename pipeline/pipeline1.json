@@ -96,7 +96,7 @@
 							},
 							{
 								"source": {
-									"name": "우편번호",
+									"name": "주소",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -108,7 +108,7 @@
 							},
 							{
 								"source": {
-									"name": "주소",
+									"name": "우편번호",
 									"type": "String",
 									"physicalType": "String"
 								},
