@@ -1,0 +1,229 @@
+{
+	"name": "pipeline3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "연번",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "num",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "확진일",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "confirmed_date",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "환자번호",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_num",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "국적",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_nationality",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "환자정보",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "patient_info",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "지역",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "여행력",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "travel",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "접촉력",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "contact",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "조치사항",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "action_to_be_taken",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "상태",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "state",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "이동경로",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "travle_route",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "등록일",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "registration_date",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "수정일",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "modification_date",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "노출여부",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "exposure_status",
+									"type": "String",
+									"physicalType": "char"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "InputDataset03",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "OutputDataset03",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

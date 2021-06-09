@@ -1,0 +1,78 @@
+{
+	"name": "OutputDataset03",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Current_Covid19_in_Seoul"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "num",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "confirmed_date",
+				"type": "varchar"
+			},
+			{
+				"name": "patient_num",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "patient_nationality",
+				"type": "nvarchar"
+			},
+			{
+				"name": "patient_info",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Location",
+				"type": "nvarchar"
+			},
+			{
+				"name": "travel",
+				"type": "nvarchar"
+			},
+			{
+				"name": "contact",
+				"type": "nvarchar"
+			},
+			{
+				"name": "action_to_be_taken",
+				"type": "nvarchar"
+			},
+			{
+				"name": "state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "travle_route",
+				"type": "nvarchar"
+			},
+			{
+				"name": "registration_date",
+				"type": "varchar"
+			},
+			{
+				"name": "modification_date",
+				"type": "varchar"
+			},
+			{
+				"name": "exposure_status",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CurrentCovid19Seoul"
+		}
+	}
+}

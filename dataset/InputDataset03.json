@@ -1,0 +1,84 @@
+{
+	"name": "InputDataset03",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Current_Covid19_in_Seoul"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Current_COVID19_in_Seoul",
+				"container": "covid19container"
+			},
+			"columnDelimiter": ",",
+			"encodingName": "EUC-KR",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "����0",
+				"type": "String"
+			},
+			{
+				"name": "Ȯ����",
+				"type": "String"
+			},
+			{
+				"name": "ȯ�ڹ�ȣ",
+				"type": "String"
+			},
+			{
+				"name": "����3",
+				"type": "String"
+			},
+			{
+				"name": "ȯ������",
+				"type": "String"
+			},
+			{
+				"name": "����5",
+				"type": "String"
+			},
+			{
+				"name": "�����6",
+				"type": "String"
+			},
+			{
+				"name": "���˷�",
+				"type": "String"
+			},
+			{
+				"name": "��ġ����",
+				"type": "String"
+			},
+			{
+				"name": "����9",
+				"type": "String"
+			},
+			{
+				"name": "�̵����",
+				"type": "String"
+			},
+			{
+				"name": "�����11",
+				"type": "String"
+			},
+			{
+				"name": "������",
+				"type": "String"
+			},
+			{
+				"name": "���⿩��",
+				"type": "String"
+			}
+		]
+	}
+}
