@@ -1,0 +1,60 @@
+{
+	"name": "InputDataset02",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Covid19_Vaccine_Status"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "COVID19_Vaccination_Status",
+				"container": "covid19container"
+			},
+			"columnDelimiter": ",",
+			"encodingName": "EUC-KR",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "������",
+				"type": "String"
+			},
+			{
+				"name": "���������",
+				"type": "String"
+			},
+			{
+				"name": "���� 1�������� ��",
+				"type": "String"
+			},
+			{
+				"name": "1������ ����",
+				"type": "String"
+			},
+			{
+				"name": "1��������(%)",
+				"type": "String"
+			},
+			{
+				"name": "���� 2�������� ��",
+				"type": "String"
+			},
+			{
+				"name": "2������ ����",
+				"type": "String"
+			},
+			{
+				"name": "2��������(%)",
+				"type": "String"
+			}
+		]
+	}
+}

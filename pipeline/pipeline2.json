@@ -1,0 +1,161 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "접종일",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "inoculation_all_day",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "접종대상자",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "subject_to_inoculation",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "당일 1차접종자 수",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "num_of_first_inoculation",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "1차접종 누계",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sum_of_first_inoculation",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "1차접종률(%)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "first_inoculation_rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 1,
+									"precision": 4
+								}
+							},
+							{
+								"source": {
+									"name": "당일 2차접종자 수",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "num_of_secondary_inoculation",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "2차접종 누계",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sum_of_secondary_inosulation",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "2차접종률(%)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "secondary_inoculation_rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "InputDataset02",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "OutputDataset02",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

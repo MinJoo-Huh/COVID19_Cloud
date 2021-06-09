@@ -1,0 +1,61 @@
+{
+	"name": "OutputDataset02",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Covid19_Vaccine_Status"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "inoculation_all_day",
+				"type": "date"
+			},
+			{
+				"name": "subject_to_inoculation",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "num_of_first_inoculation",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sum_of_first_inoculation",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "first_inoculation_rate",
+				"type": "decimal",
+				"precision": 4,
+				"scale": 1
+			},
+			{
+				"name": "num_of_secondary_inoculation",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sum_of_secondary_inosulation",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "secondary_inoculation_rate",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Covid19VaccineStatus"
+		}
+	}
+}
